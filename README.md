@@ -32,31 +32,32 @@ Hardware – PCs, Cyclone II , USB flasher
 
 
 **Program:
-module EXP_3_1(a,b,c,d,f1);
-input a,b,c,d;
-output f1;
-assign f1=((~b&~d)|(~a&b&d)|(a&b&~c));
-endmodule
-module EXP_3_2(w,x,y,z,f2);
-input w,x,y,z;
-output f2;
-assign f2=((~y&z)|(x&y)|(w&y));
+module exp_2(A,B,C,D,F1);
+input A,B,C,D;
+output F1;
+wire x1,x2,x3,x4,x5;
+assign x1=(~A)&(~B)&(~C)&(~D);
+assign x2=(A)&(~C)&(~D);
+assign x3=(~B)&(C)&(~D);
+assign x4=(~A)&(B)&(C)&(D);
+assign x5=(B)&(~C)&(D);
+assign F1=x1|x2|x3|x4|x5;
 endmodule
 
 Developed by:Avanthika M RegisterNumber:212224110009*/
 
 
 **RTL realization**
-![Screenshot 2025-05-01 180632](https://github.com/user-attachments/assets/a92f96d9-bc53-4d0c-b597-429142859a4f)
-![Screenshot 2025-05-01 181809](https://github.com/user-attachments/assets/6c42101e-46d2-4bbd-8b2e-073e3bb84f10)
+![Screenshot 2025-05-02 140152](https://github.com/user-attachments/assets/4f9196e9-317e-4e3e-ae08-e978c9b63803)
+
 
 **Output:**
+![Screenshot 2025-05-02 140203](https://github.com/user-attachments/assets/28d1c262-146f-4993-ad0f-cbd240c37d1f)
 
-**RTL**
-![Screenshot 2025-05-01 180935](https://github.com/user-attachments/assets/3fcfb8bd-8f29-4993-b57a-d775ab284153)
-![Screenshot 2025-05-01 182016](https://github.com/user-attachments/assets/d71546c3-75c1-4add-8554-5c0c47943985)
+**RTL*
 
 **Timing Diagram**
+![Screenshot 2025-05-02 140214](https://github.com/user-attachments/assets/0c230be4-45fe-4250-81e7-4e9583f9b07e)
 
 **Result:**
 
